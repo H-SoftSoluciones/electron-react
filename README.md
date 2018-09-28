@@ -17,8 +17,6 @@
 
 ## 开发
 
-![based on](https://qnm.hunliji.com/o_1cl19jl4ljle1p4loot1di1k1jm.png?imageView2/2/w/1920/h/1920/format/webp)
-
 ### 本地开发
 
 克隆仓库
