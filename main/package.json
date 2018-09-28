@@ -1,0 +1,10 @@
+{
+  "name": "water_mirror",
+  "productName": "水镜",
+  "version": "1.2.3",
+  "description": "婚礼纪·水镜",
+  "main": "./main.js",
+  "author": "weddding",
+  "homepage": "https://www.hunliji.com",
+  "license": "MIT"
+}

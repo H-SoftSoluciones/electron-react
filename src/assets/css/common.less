@@ -1,0 +1,68 @@
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,select,input{margin:0;padding:0;}
+img{border:none;vertical-align:top;}
+table{border-collapse:collapse;}
+ul,ol{list-style:none;}
+textarea{resize:none;overflow:auto;}
+a{text-decoration: none;}
+html,
+body{
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif
+}
+
+html,
+body,
+.root,
+.Frame{
+  height: 100%;
+  width: 100%;
+}
+.root {
+  min-width: 1024px;
+}
+.clearfix{
+  zoom: 1;
+  &:after{
+    clear: both;
+    display: block;
+    overflow: hidden;
+    height: 0;
+  }
+}
+
+.fl{
+  float: left;
+}
+
+.fr{
+  float: right;
+}
+
+.no-select{
+  -webkit-user-select:none;
+  user-select:none;
+}
+
+.shenglue{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ::selection {
+//   background:transparent;
+// }
+
+// 隐藏滚动条
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-track {
+  width: 0px;
+}
+::-webkit-scrollbar-thumb {
+  width: 0px;
+  border-radius: 0px;
+  -webkit-border-radius:0px;
+}

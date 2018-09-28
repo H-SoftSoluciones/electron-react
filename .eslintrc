@@ -1,0 +1,9 @@
+{
+  "extends": ["hlj-merchant"],
+  "globals": {
+    "_": true,
+    "Api": true,
+    "axios": true,
+    "moment": true
+  }
+}
