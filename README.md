@@ -1,58 +1,57 @@
-## 用到的一些技术
+# Electron + React y WebPack
+### Dependecias Actualizadas a fecha 2019 
 
 ![based on](https://qnm.hunliji.com/o_1cl1983n812pe60c1o9a1k3ifq8h.png)
 
-1. 跨平台工具: [Electron](http://electron.atom.io/)
+1. Herramienta multiplataforma: [Electron](http://electron.atom.io/)
 
-2. 打包工具: [Webpack](http://webpack.github.io/docs/), [Babel](https://babeljs.io), [electron-builder](https://github.com/electron-userland/electron-builder)
+2. Herramienta de embalaje: [Webpack](http://webpack.github.io/docs/), [Babel](https://babeljs.io), [electron-builder](https://github.com/electron-userland/electron-builder)
 
-3. 编写语言: [ES2015](https://babeljs.io/docs/learn-es2015/), [Less](http://lesscss.cn/)
+3. Lenguaje de escritura: [ES2015](https://babeljs.io/docs/learn-es2015/), [Less](http://lesscss.cn/)
+   - Herramienta de análisis de Errores: [ESLint](https://eslint.org/)
+   - Formateador de Código: [Prettier](https://prettier.io/)
 
-4. 使用的框架(库): [React](https://facebook.github.io/react/), [mobx](https://cn.mobx.js.org/),
-   [Ant Design](https://ant.design/),
+4. Marco utilizado (biblioteca): 
+   [React](https://facebook.github.io/react/), 
    [React Router](https://github.com/reactjs/react-router),
-   [React Hot Loader](https://github.com/gaearon/react-hot-loader),
+   [React Hot Loader](https://github.com/gaearon/react-hot-loader)
+   
+5. Compilador : [Electron-builder](https://www.electron.build/)
 
-5. 代码静态检测: [ESLint](http://eslint.org/)
+## instalar
 
-## 开发
-
-### 本地开发
-
-克隆仓库
+Oficial base
 
 ```bash
 https://github.com/YoFoon/electron-react.git
 ```
+Fork
+```bash
+https://github.com/H-SoftSoluciones/electron-react.git
+```
 
-安装依赖模块
+instalacion de dependencias
 
 ```bash
 $ cd electron-react && npm i
 ```
 
-### 本地跑起服务
+### Ejecusion
 
 ```bash
 $ npm run start
 ```
 
-### 打包
+### Compilacion
 
-打包 windows 版本
+Versión de Windows
 
 ```bash
 $ npm run win
 ```
 
-打包 mac 版本
+Versión de mac -- no pobrado por mi
 
 ```bash
 $ npm run mac
-```
-
-同时打包 windows 和 mac 版本
-
-```bash
-$ npm run builder
 ```
