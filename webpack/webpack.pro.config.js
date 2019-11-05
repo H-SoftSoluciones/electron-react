@@ -1,95 +1,42 @@
-var webpack = require('webpack')
-var webpackMerge = require('webpack-merge')
-const Conf = require('./config')
-const baseConfig = require('./webpack.base.config')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+var webpack = require("webpack");
+var webpackMerge = require("webpack-merge");
+const Conf = require("./config");
+const baseConfig = require("./webpack.base.config");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = webpackMerge(baseConfig, {
   output: {
     path: Conf.OUTPUT,
-    publicPath: './',
-    filename: '[name].bundle.js'
+    publicPath: "./",
+    filename: "[name].bundle.js"
   },
 
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader']
-        })
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
       },
       {
         test: /\.less$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader', 'less-loader']
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "less-loader"
+        ]
       }
     ]
   },
 
   plugins: [
-    new ExtractTextPlugin('css/[name].bundle.css'),
+    new MiniCssExtractPlugin("css/[name].bundle.css"),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false,
-        drop_console: true,
-        drop_debugger: true
-      }
+      "process.env.NODE_ENV": JSON.stringify("production")
     })
   ],
-
-  target: 'electron-renderer'
-})
-
-// module.exports = webpackMerge(WebpackBaseCfong, {
-//   context: Conf.ROOT,
-
-//   output: {
-//     path: Conf.OUTPUT,
-//     publicPath: './',
-//     filename: '[name].bundle.js'
-//   },
-
-//   module: {
-//     rules: [
-//       {
-//         test: /\.css$/,
-//         use: ExtractTextPlugin.extract({
-//           fallback: 'style-loader',
-//           use: ['css-loader'],
-//         })
-//       }, {
-//         test: /\.less$/,
-//         use: ExtractTextPlugin.extract({
-//           fallback: 'style-loader',
-//           use: ['css-loader',  'postcss-loader', 'less-loader']
-//         })
-//       }
-//     ],
-//   },
-
-//   plugins: [
-//     new ExtractTextPlugin('css/[name].bundle.css'),
-//     new webpack.DefinePlugin({
-//       'process.env.NODE_ENV': JSON.stringify('production')
-//     }),
-//     // new webpack.optimize.UglifyJsPlugin({
-//     //   drop_console: true,
-//     //   drop_debugger: true
-//     // })
-//     new BabiliPlugin()
-//   ],
-
-//   stats: {
-//     colors: true,
-//     children: false,
-//     chunks: false,
-//     modules: false
-//   }
-// })
+  optimization: {
+    minimize: false
+  },
+  target: "electron-renderer"
+});

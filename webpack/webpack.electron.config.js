@@ -1,12 +1,11 @@
 // translate main.js
 
-import webpack from 'webpack'
-import baseConfig from './webpack.base.config'
-import Conf from './config' //引入常量
+var webpack = require("webpack");
+const baseConfig = require("./webpack.base.config");
+const Conf = require("./config");
 
 export default {
-  ...baseConfig,
-
+  
   entry: './main/index.js',
 
   output: {
@@ -16,11 +15,6 @@ export default {
   },
 
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compressor: {
-    //     warnings: false
-    //   }
-    // }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')

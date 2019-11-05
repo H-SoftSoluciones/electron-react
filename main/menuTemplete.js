@@ -3,63 +3,67 @@ const pkg = require('./package.json')
 
 let template = [
   {
-    label: '视图',
+    label: "Ver",
     submenu: [
       {
-        label: '全屏切换',
+        label: "Cambio a pantalla completa",
         accelerator: (() => {
-          if (process.platform === 'darwin') {
-            return 'F12'
+          if (process.platform === "darwin") {
+            return "F12";
           } else {
-            return 'F12'
+            return "F12";
           }
         })(),
         click(item, focusedWindow) {
           if (focusedWindow) {
-            const fullScreen = !focusedWindow.isFullScreen()
-            focusedWindow.webContents.send('res_F12', { fullScreen })
-            focusedWindow.setFullScreen(fullScreen)
+            const fullScreen = !focusedWindow.isFullScreen();
+            focusedWindow.webContents.send("res_F12", { fullScreen });
+            focusedWindow.setFullScreen(fullScreen);
           }
         }
       },
       {
-        label: '最小化',
-        accelerator: 'CmdOrCtrl+M',
-        role: 'minimize'
+        label: "Minimizar",
+        accelerator: "CmdOrCtrl+M",
+        role: "minimize"
       },
       {
-        label: '隐藏',
-        accelerator: 'Command+H',
-        role: 'hide'
+        label: "Ocultar",
+        accelerator: "Command+H",
+        role: "hide"
       },
       {
-        label: '关闭',
-        accelerator: 'CmdOrCtrl+W',
-        role: 'close'
+        label: "cerrar",
+        accelerator: "CmdOrCtrl+W",
+        role: "close"
       }
     ]
   },
   {
-    label: '编辑',
+    label: "Editar",
     submenu: [
-      { label: '撤销', accelerator: 'CommandOrControl+Z', selector: 'undo:' },
       {
-        label: '恢复',
-        accelerator: 'Shift+CommandOrControl+Z',
-        selector: 'redo:'
+        label: "Cancelar",
+        accelerator: "CommandOrControl+Z",
+        selector: "undo:"
       },
-      { type: 'separator' },
-      { label: '剪切', accelerator: 'CommandOrControl+X', selector: 'cut:' },
-      { label: '复制', accelerator: 'CommandOrControl+C', selector: 'copy:' },
-      { label: '粘贴', accelerator: 'CommandOrControl+V', selector: 'paste:' },
       {
-        label: '全选',
-        accelerator: 'CommandOrControl+A',
-        selector: 'selectAll:'
+        label: "Recuperación",
+        accelerator: "Shift+CommandOrControl+Z",
+        selector: "redo:"
+      },
+      { type: "separator" },
+      { label: "cortar", accelerator: "CommandOrControl+X", selector: "cut:" },
+      { label: "copiar", accelerator: "CommandOrControl+C", selector: "copy:" },
+      { label: "pegar", accelerator: "CommandOrControl+V", selector: "paste:" },
+      {
+        label: "selecionar todo",
+        accelerator: "CommandOrControl+A",
+        selector: "selectAll:"
       }
     ]
   }
-]
+];
 
 if (process.platform === 'darwin') {
   const name = pkg.productName
@@ -67,29 +71,29 @@ if (process.platform === 'darwin') {
     label: name,
     submenu: [
       {
-        label: '关于',
-        role: 'about'
+        label: "Acerca de",
+        role: "about"
       },
       {
-        type: 'separator'
+        type: "separator"
       },
       {
-        label: '设置',
-        role: 'services',
+        label: "Ambientación",
+        role: "services",
         submenu: []
       },
       {
-        type: 'separator'
+        type: "separator"
       },
       {
-        label: 'Quit',
-        accelerator: 'Command+Q',
+        label: "Quit",
+        accelerator: "Command+Q",
         click() {
-          app.quit()
+          app.quit();
         }
       }
     ]
-  })
+  });
 }
 
 if (process.env.NODE_ENV === 'development') {

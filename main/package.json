@@ -1,10 +1,10 @@
 {
-  "name": "water_mirror",
-  "productName": "水镜",
-  "version": "1.2.3",
-  "description": "婚礼纪·水镜",
+  "name": "libreria-pos",
+  "productName": "Libreria POS",
+  "version": "1.0.0",
+  "description": "Punto de Venta para Librerias de el salvador",
   "main": "./main.js",
-  "author": "weddding",
-  "homepage": "https://www.hunliji.com",
-  "license": "MIT"
+  "author": "H-Dev",
+  "homepage": "https://h-softsoluciones.github.io/",
+  "license": "Copyright © 2019 H-Dev"
 }

@@ -7,7 +7,6 @@ import Routers from './route'
 
 export default class Index extends Component {
   render() {
-    //获取本地userid
     return (
       <HashRouter>
         <Frame>

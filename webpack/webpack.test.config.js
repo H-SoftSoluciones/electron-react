@@ -38,7 +38,6 @@ module.exports = webpackMerge(baseConfig, {
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         warnings: false,
-        // drop_console: true,
         drop_debugger: true
       }
     })
